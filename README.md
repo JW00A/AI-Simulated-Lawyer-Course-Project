@@ -77,5 +77,13 @@ This project was inspired by Elements of AI courses: https://www.elementsofai.co
 AI support was used while writing this readme file, and what partially inspired this project, in the first place, too(what is an implementation of ChatGPT in Microsoft ChatBot/Search): https://copilot.microsoft.com/
 
 GPT4All was used in newest versions of prototype: https://github.com/nomic-ai/gpt4all
+Details: @misc{gpt4all,
+  author = {Yuvanesh Anand and Zach Nussbaum and Brandon Duderstadt and Benjamin Schmidt and Andriy Mulyar},
+  title = {GPT4All: Training an Assistant-style Chatbot with Large Scale Data Distillation from GPT-3.5-Turbo},
+  year = {2023},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/nomic-ai/gpt4all}},
+}
 
 The Meta-Llama-3-8B-Instruct-IQ4_NL.gguf model from the Hugging Face Model Hub was used also: https://huggingface.co/bartowski/Meta-Llama-3-8B-Instruct-GGUF.
