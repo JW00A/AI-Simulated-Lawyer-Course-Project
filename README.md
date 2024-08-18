@@ -1,2 +1,2 @@
-# AI-Lawyer-Course-Project
-Building AI-Lawyer-Course Project
+# AI-Simulated-Lawyer-Course-Project
+Building AI-Simulated-Lawyer-Course Project
