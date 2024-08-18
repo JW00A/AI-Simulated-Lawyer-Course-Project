@@ -64,4 +64,5 @@ This project requires good python programmers, AI engineers or people with good 
 ## Acknowledgments
 
 This project was inspired by Elements of AI courses: https://www.elementsofai.com/
+
 AI support was used while writing this readme file, and what partially inspired this project, in the first place, too(what is an implementation of ChatGPT in Microsoft ChatBot/Search): https://copilot.microsoft.com/
