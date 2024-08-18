@@ -18,7 +18,13 @@ It's a legal assistant chatbot that helps with issue identification and possible
 
 ```
 import spacy
-import openai  # Install this library using 'pip install openai'
+from gpt4all import GPT4All
+
+model = GPT4All("Meta-Llama-3-8B-Instruct-IQ4_NL.gguf")  # Downloads / loads a 4.66GB LLM, unless already downloaded to desired location
+
+with model.chat_session():
+    response = model.generate("How can I run LLMs efficiently on my laptop?", max_tokens=1024)
+    print(response)
 
 # Load the spaCy NLP model
 nlp = spacy.load("en_core_web_sm")
@@ -34,23 +40,20 @@ doc = nlp(legal_text)
 # Extract legal concepts (e.g., named entities)
 legal_concepts = [ent.text for ent in doc.ents]
 
-# Simulate user queries (should be replaced this with actual user input)
+# Simulate user queries (replace with actual user input)
 user_query = "What are the requirements for starting a business?"
 
 # Intent recognition (simplified rule-based approach)
-if "requirements" in user_query.lower():
-    # Use GPT-4 to generate a detailed response
-    gpt_response = openai.Completion.create(
-        engine="text-davinci-002",
-        prompt=user_query,
-        max_tokens=50,
-        stop=["\n"],
-    )
-    response = gpt_response.choices[0].text.strip()
-else:
-    response = "I apologize, but I couldn't understand your query."
+def get_gpt_response(user_query):
+    messages = [
+        {"role": "user", "content": user_query}
+    ]
+    response = model.generate_response(messages)
+    return response
 
-print(response)
+# Example usage
+gpt_response = get_gpt_response(user_query)
+print(gpt_response)
 ```
 
 ## Challenges
@@ -66,3 +69,7 @@ This project requires good python programmers, AI engineers or people with good 
 This project was inspired by Elements of AI courses: https://www.elementsofai.com/
 
 AI support was used while writing this readme file, and what partially inspired this project, in the first place, too(what is an implementation of ChatGPT in Microsoft ChatBot/Search): https://copilot.microsoft.com/
+
+GPT4All was used in newest versions of prototype: https://github.com/nomic-ai/gpt4all
+
+The Meta-Llama-3-8B-Instruct-IQ4_NL.gguf model from the Hugging Face Model Hub was used also: https://huggingface.co/bartowski/Meta-Llama-3-8B-Instruct-GGUF.
