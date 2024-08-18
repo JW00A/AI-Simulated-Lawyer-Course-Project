@@ -20,7 +20,13 @@ It's a legal assistant chatbot that helps with issue identification and possible
 import spacy
 from gpt4all import GPT4All
 
-model = GPT4All("Meta-Llama-3-8B-Instruct-IQ4_NL.gguf")  # Downloads / loads a 4.66GB LLM, unless already downloaded to desired location
+#model = GPT4All("Meta-Llama-3-8B-Instruct-IQ4_NL.gguf")  # Downloads / loads a 4.66GB LLM, unless already downloaded to desired location, then look below
+
+# Specify the path to the downloaded model file
+model_path = "/path to your directory/Meta-Llama-3-8B-Instruct-IQ4_NL.gguf"
+
+# Initialize the GPT4All model
+model = GPT4All(model_path)
 
 with model.chat_session():
     response = model.generate("How can I run LLMs efficiently on my laptop?", max_tokens=1024)
